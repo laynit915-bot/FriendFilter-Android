@@ -1,26 +1,47 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/bg">
-  <LinearLayout android:id="@+id/dashboard" android:orientation="vertical" android:padding="18dp" android:layout_width="match_parent" android:layout_height="match_parent">
-    <TextView android:text="FriendFilter" android:textStyle="bold" android:textSize="30sp" android:textColor="@color/text" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-    <TextView android:text="Dọn danh sách bạn bè • xử lý trên thiết bị" android:textSize="14sp" android:textColor="@color/muted" android:layout_marginTop="3dp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-    <LinearLayout android:background="@drawable/card" android:orientation="vertical" android:layout_marginTop="18dp" android:layout_width="match_parent" android:layout_height="wrap_content">
-      <TextView android:text="Tình trạng" android:textStyle="bold" android:textSize="16sp" android:textColor="@color/text" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-      <TextView android:id="@+id/status" android:text="Sẵn sàng đăng nhập Facebook" android:textColor="@color/muted" android:layout_marginTop="6dp" android:layout_width="match_parent" android:layout_height="wrap_content"/>
-      <TextView android:id="@+id/stats" android:text="Đã ghi nhận: 0 hồ sơ" android:textStyle="bold" android:textColor="@color/brandDark" android:layout_marginTop="10dp" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/bg">
+
+    <ScrollView android:id="@+id/dashboard" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+        <LinearLayout android:orientation="vertical" android:padding="22dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="horizontal" android:gravity="center_vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <TextView android:text="FriendFilter" android:textStyle="bold" android:textSize="34sp" android:textColor="@color/text" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"/>
+                <TextView android:text="v0.4" android:textStyle="bold" android:textColor="@color/brandDark" android:background="@drawable/card" android:padding="10dp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <TextView android:text="Quản lý bạn bè Facebook dễ dàng hơn\nLọc, sắp xếp và xử lý ngay trên thiết bị" android:textSize="15sp" android:lineSpacingExtra="3dp" android:textColor="@color/muted" android:layout_marginTop="6dp" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+
+            <LinearLayout android:background="@drawable/card" android:orientation="vertical" android:layout_marginTop="22dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <TextView android:text="●  FACEBOOK SESSION" android:textStyle="bold" android:textColor="@color/ok" android:textSize="13sp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                <TextView android:id="@+id/status" android:text="Sẵn sàng đăng nhập Facebook" android:textStyle="bold" android:textColor="@color/text" android:textSize="17sp" android:layout_marginTop="8dp" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                <TextView android:text="Phiên đăng nhập và dữ liệu được giữ trên thiết bị này" android:textColor="@color/muted" android:layout_marginTop="5dp" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout android:background="@drawable/card" android:orientation="vertical" android:layout_marginTop="14dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <TextView android:text="HỒ SƠ ĐÃ GHI NHẬN" android:textColor="@color/muted" android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                <TextView android:id="@+id/stats" android:text="0" android:textStyle="bold" android:textSize="34sp" android:textColor="@color/text" android:layout_marginTop="4dp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                <TextView android:text="Like • Comment • Message chỉ hiển thị khi có dữ liệu hợp lệ" android:textColor="@color/muted" android:textSize="12sp" android:layout_marginTop="2dp" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <Button android:id="@+id/loginBtn" android:text="  MỞ FACEBOOK  →" android:textStyle="bold" android:textColor="@color/text" android:textSize="16sp" android:background="@drawable/button_primary" android:layout_marginTop="20dp" android:layout_width="match_parent" android:layout_height="64dp"/>
+            <Button android:id="@+id/friendsBtn" android:text="  MỞ DANH SÁCH BẠN BÈ  →" android:textStyle="bold" android:textColor="@color/text" android:textSize="16sp" android:background="@drawable/button_primary" android:layout_marginTop="12dp" android:layout_width="match_parent" android:layout_height="64dp"/>
+            <Button android:id="@+id/resultsBtn" android:text="  KẾT QUẢ • LỌC • SẮP XẾP  →" android:textStyle="bold" android:textColor="@color/text" android:textSize="16sp" android:background="@drawable/button_primary" android:layout_marginTop="12dp" android:layout_width="match_parent" android:layout_height="64dp"/>
+
+            <LinearLayout android:background="@drawable/card" android:orientation="vertical" android:layout_marginTop="18dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <TextView android:text="AN TOÀN MẶC ĐỊNH" android:textStyle="bold" android:textColor="@color/text" android:textSize="15sp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                <TextView android:text="🔒 Không gửi cookie/token lên server\n⚡ Xử lý cục bộ trên máy\n🛡 Không tự động hủy kết bạn\n✓ Không bịa số Like, Comment hoặc Message" android:textColor="@color/muted" android:lineSpacingExtra="7dp" android:layout_marginTop="10dp" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout android:id="@+id/browserPanel" android:visibility="gone" android:orientation="vertical" android:background="@color/bg" android:layout_width="match_parent" android:layout_height="match_parent">
+        <LinearLayout android:orientation="horizontal" android:gravity="center_vertical" android:padding="10dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <Button android:id="@+id/backBtn" android:text="← APP" android:textColor="@color/text" android:background="@drawable/button_primary" android:layout_width="0dp" android:layout_weight="1" android:layout_height="52dp"/>
+            <Button android:id="@+id/scanBtn" android:text="✦ GHI NHẬN TRANG" android:textStyle="bold" android:textColor="@color/text" android:background="@drawable/button_primary" android:layout_marginStart="9dp" android:layout_width="0dp" android:layout_weight="2" android:layout_height="52dp"/>
+        </LinearLayout>
+        <WebView android:id="@+id/web" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"/>
     </LinearLayout>
-    <Button android:id="@+id/loginBtn" android:text="ĐĂNG NHẬP / MỞ FACEBOOK" android:layout_marginTop="16dp" android:layout_width="match_parent" android:layout_height="54dp"/>
-    <Button android:id="@+id/friendsBtn" android:text="MỞ DANH SÁCH BẠN BÈ" android:layout_marginTop="9dp" android:layout_width="match_parent" android:layout_height="54dp"/>
-    <Button android:id="@+id/resultsBtn" android:text="XEM KẾT QUẢ ĐÃ GHI NHẬN" android:layout_marginTop="9dp" android:layout_width="match_parent" android:layout_height="54dp"/>
-    <LinearLayout android:background="@drawable/card" android:orientation="vertical" android:layout_marginTop="16dp" android:layout_width="match_parent" android:layout_height="wrap_content">
-      <TextView android:text="An toàn mặc định" android:textStyle="bold" android:textSize="16sp" android:textColor="@color/text" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-      <TextView android:text="Session Facebook nằm trong WebView trên máy. Không gửi cookie/token sang server của FriendFilter. Không tự động hủy kết bạn. Hồ sơ thiếu dữ liệu được giữ ở trạng thái Chưa xác định." android:textColor="@color/muted" android:lineSpacingExtra="3dp" android:layout_marginTop="7dp" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+
+    <LinearLayout android:id="@+id/loadingOverlay" android:visibility="gone" android:clickable="true" android:focusable="true" android:gravity="center" android:orientation="vertical" android:padding="30dp" android:background="#E6070A1A" android:layout_width="match_parent" android:layout_height="match_parent">
+        <com.google.android.material.progressindicator.CircularProgressIndicator android:id="@+id/scanProgress" android:indeterminate="true" app:indicatorColor="@color/brandDark" app:trackColor="@color/surface2" app:indicatorSize="72dp" app:trackThickness="7dp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        <TextView android:id="@+id/loadingTitle" android:text="Đang quét hồ sơ…" android:textStyle="bold" android:textSize="22sp" android:textColor="@color/text" android:layout_marginTop="22dp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        <TextView android:id="@+id/loadingDetail" android:text="Đang đọc dữ liệu hiển thị trên trang" android:textColor="@color/muted" android:gravity="center" android:layout_marginTop="8dp" android:layout_width="match_parent" android:layout_height="wrap_content"/>
     </LinearLayout>
-    <TextView android:text="Trong màn hình Facebook: cuộn danh sách để tải thêm bạn, sau đó bấm Ghi nhận trang." android:textColor="@color/muted" android:gravity="center" android:layout_marginTop="16dp" android:layout_width="match_parent" android:layout_height="wrap_content"/>
-  </LinearLayout>
-  <LinearLayout android:id="@+id/browserPanel" android:visibility="gone" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
-    <LinearLayout android:orientation="horizontal" android:padding="8dp" android:layout_width="match_parent" android:layout_height="wrap_content">
-      <Button android:id="@+id/backBtn" android:text="← APP" android:layout_width="0dp" android:layout_weight="1" android:layout_height="48dp"/>
-      <Button android:id="@+id/scanBtn" android:text="GHI NHẬN TRANG" android:layout_marginStart="8dp" android:layout_width="0dp" android:layout_weight="2" android:layout_height="48dp"/>
-    </LinearLayout>
-    <WebView android:id="@+id/web" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"/>
-  </LinearLayout>
-</LinearLayout>
+</FrameLayout>
